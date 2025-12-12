@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Card from "../../components/Card";
+import Profile from "../../components/Profile";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <div className="absolute top-10 right-10">
+        <Profile />
+      </div>
       <div className="flex flex-col gap-4 absolute top-110 bottom-0 mx-10">
         <h2 className="text-xl font-medium">Populares no momento</h2>
         <div className="flex gap-4">
@@ -45,7 +49,7 @@ export default function Home() {
             release_date="2022-03-01"
             genre_ids={[80, 9648, 53]}
           />
-           <Card
+          <Card
             poster_path="https://image.tmdb.org/t/p/original/wd7b4Nv9QBHDTIjc2m7sr0IUMoh.jpg"
             title="The Batman"
             release_date="2022-03-01"
