@@ -11,18 +11,12 @@ body {
 }
 
 button {
-  background-color: #292929;
-  color: #cfcfcf;
-  border: 1px solid #ffffff20;
   letter-spacing: 1px;
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
   cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
 }
 
-button:hover {
-  background-color: transparent;
-  border: 1px solid #009966;
-  transition: 300ms;
-}

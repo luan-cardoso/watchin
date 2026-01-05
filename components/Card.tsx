@@ -75,17 +75,15 @@ export default function Card({
             <span key={genre}>{genre}</span>
           ))}
         </div>
-        <div className="">
-          <div className="flex justify-between">
-            <span className="flex gap-1 items-center">
-              <FontAwesomeIcon icon={faCalendarDays} />
-              {formatDateToMonthYear(release_date)}
-            </span>
-            <button className="px-2 py-1 flex gap-1 items-center">
-              Salvar
-              <FontAwesomeIcon icon={faBookmark} />
-            </button>
-          </div>
+        <div className="flex justify-between items-center">
+          <span className="flex gap-1 items-center">
+            <FontAwesomeIcon icon={faCalendarDays} />
+            {formatDateToMonthYear(release_date)}
+          </span>
+          <FontAwesomeIcon
+            icon={faBookmark}
+            className="hover:text-emerald-600 cursor-pointer duration-300"
+          />
         </div>
       </div>
     </div>
