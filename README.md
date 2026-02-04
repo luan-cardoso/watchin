@@ -72,15 +72,19 @@ O aplicativo estará disponível em `http://localhost:3000`.
 ### Banco de dados e migrações (Supabase)
 
 # Ver o banco de dados visualmente
+
 npx prisma studio
 
 # Resetar o banco (CUIDADO: apaga todos os dados)
+
 npx prisma migrate reset
 
 # Criar nova migração após alterar o schema
+
 npx prisma migrate dev --name nome_da_migracao
 
 # Formatar o schema.prisma
+
 npx prisma format
 
 ### Scripts Disponíveis

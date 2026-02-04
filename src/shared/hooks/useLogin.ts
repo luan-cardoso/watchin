@@ -34,7 +34,8 @@ export function useLogin() {
 
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Erro ao fazer login";
+      const errorMessage =
+        err instanceof Error ? err.message : "Erro ao fazer login";
       setError(errorMessage);
       throw err;
     } finally {

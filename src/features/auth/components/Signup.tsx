@@ -17,7 +17,7 @@ type SignupFormData = z.infer<typeof signupSchema>;
 
 export default function Signup() {
   const { signup, isLoading, error } = useSignup();
-  
+
   const {
     register,
     handleSubmit,

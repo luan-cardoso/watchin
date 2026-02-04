@@ -1,9 +1,20 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/features/auth/lib/auth";
-import Link from "next/link";
+"use client";
 
-export default async function FavoritosPage() {
-  const session = await getServerSession(authOptions);
+import { useSession } from "next-auth/react";
+import MovieCard from "@/features/movies/components/MovieCard";
+import { useFavorites } from "@/features/favorites";
+
+export default function FavoritosPage() {
+  const { data: session, status } = useSession();
+  const { favorites, isLoading, error } = useFavorites();
+
+  if (status === "loading") {
+    return (
+      <div className="w-full flex justify-center items-center min-h-screen">
+        <p className="text-gray-300">Carregando...</p>
+      </div>
+    );
+  }
 
   if (!session) {
     return (
@@ -28,53 +39,49 @@ export default async function FavoritosPage() {
           <h2 className="text-2xl font-bold text-white mb-3">
             Login Necessário
           </h2>
-          
+
           <p className="mb-6">
             Você precisa estar logado para acessar seus filmes favoritos.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/login"
-              className="px-6 py-3 bg-indigo-500 text-white rounded-md hover:bg-indigo-400 transition-colors font-medium"
-            >
-              Fazer Login
-            </Link>
-            
-            <Link
-              href="/signup"
-              className="px-6 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors font-medium"
-            >
-              Criar Conta
-            </Link>
-          </div>
-
-          <Link
-            href="/"
-            className="inline-block mt-6 hover:text-gray-300 text-sm"
-          >
-            ← Voltar para Home
-          </Link>
         </div>
       </div>
     );
   }
 
-  // Usuário está logado - mostrar favoritos
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-white mb-6">
-        Meus Favoritos
-      </h1>
-      
-      <p className="text-gray-400 mb-4">
-        Bem-vindo, <span className="text-white font-semibold">{session.user.name}</span>!
+    <div className="container mx-auto p-16">
+      <h1 className="text-3xl font-bold mb-6">Meus Favoritos</h1>
+      <p className="mb-4">
+        Bem-vindo, <span className="font-semibold">{session.user.name}</span>
       </p>
-
-      {/* Aqui você vai adicionar a lista de filmes favoritos depois */}
-      <div className="text-gray-400">
-        Seus filmes favoritos aparecerão aqui...
-      </div>
+      {isLoading && favorites.length === 0 ? (
+        <div className="w-full flex justify-center py-10">
+          <p className="">Carregando favoritos...</p>
+        </div>
+      ) : error ? (
+        <div className="w-full flex justify-center py-10">
+          <p className="text-red-400">{error}</p>
+        </div>
+      ) : favorites.length === 0 ? (
+        <div className="w-full flex justify-center py-10">
+          <p className="">
+            Você ainda não adicionou nenhum filme aos favoritos.
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-4 gap-6 items-center w-fit mx-auto py-10">
+          {favorites.map((movie) => (
+            <MovieCard
+              key={movie.favoriteId ?? movie.id}
+              id={movie.id}
+              title={movie.title}
+              release_date={movie.release_date}
+              poster_path={movie.poster_path}
+              genre_ids={movie.genre_ids}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

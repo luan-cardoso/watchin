@@ -1,8 +1,6 @@
 "use client";
 
-import {
-  faArrowRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LoginModal from "./LoginModal";
 import { useState } from "react";

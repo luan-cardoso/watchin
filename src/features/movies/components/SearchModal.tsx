@@ -107,6 +107,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   {results.map((movie) => (
                     <MovieCard
                       key={movie.id}
+                      id={movie.id}
                       title={movie.title}
                       release_date={movie.release_date}
                       genre_ids={movie.genre_ids}

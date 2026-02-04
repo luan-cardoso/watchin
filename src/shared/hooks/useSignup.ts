@@ -49,10 +49,11 @@ export function useSignup() {
       }
 
       router.push("/");
-      
+
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Erro ao criar conta";
+      const errorMessage =
+        err instanceof Error ? err.message : "Erro ao criar conta";
       setError(errorMessage);
       throw err;
     } finally {

@@ -21,16 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body
-        className={`${karla.className} antialiased grid grid-rows-1 grid-cols-[1fr_6fr] h-screen`}
-      >
-        <nav>
-          <Nav />
-        </nav>
-        <div className="overflow-y-auto min-h-screen [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <AuthProvider>{children}</AuthProvider>
-        </div>
-      </body>
+      <AuthProvider>
+        <body
+          className={`${karla.className} antialiased grid grid-rows-1 grid-cols-[1fr_6fr] h-screen`}
+        >
+          <nav>
+            <Nav />
+          </nav>
+          <div className="overflow-y-auto min-h-screen [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {children}
+          </div>
+        </body>
+      </AuthProvider>
     </html>
   );
 }

@@ -23,7 +23,7 @@ export async function POST(request: Request) {
           error: "Dados inválidos",
           details: validation.error.issues,
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -36,10 +36,7 @@ export async function POST(request: Request) {
     });
 
     if (existingUser) {
-      return NextResponse.json(
-        { error: "Usuário já existe" },
-        { status: 409 }
-      );
+      return NextResponse.json({ error: "Usuário já existe" }, { status: 409 });
     }
 
     const hashedPassword = await hash(senha, 12);
@@ -61,7 +58,7 @@ export async function POST(request: Request) {
         message: "Usuário criado com sucesso",
         user: newUser,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     console.error("Erro ao criar usuário:", error);
@@ -75,7 +72,7 @@ export async function POST(request: Request) {
         error: "Erro ao criar usuário",
         ...(isDev && { details: message }),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
