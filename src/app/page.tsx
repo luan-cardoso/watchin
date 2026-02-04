@@ -1,28 +1,23 @@
 import Image from "next/image";
-import Card from "../../components/Card";
-import Profile from "../../components/Profile";
+import { Profile } from "@/features/auth";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative h-screen">
       <main className="relative w-full h-full">
         <Image
           fill
           priority
           className="object-cover"
-          src="/ghostface.jpg"
-          alt="ghostface image"
+          src="/lightyear.jpg"
+          alt="buzz lightyear image"
         />
-        <div className="relative px-10 pt-36">
-          <div>
-            <h2 className="text-2xl font-medium">
-              Conecte-se com seus amigos.
-            </h2>
-            <h2 className="text-5xl font-extrabold">
-              Salve seus filmes <br />
-              favoritos.
-            </h2>
-          </div>
+        <div className="relative px-20 pt-36">
+          <h2 className="text-5xl font-extrabold mb-6">
+            Salve seus filmes <br />
+            favoritos.
+          </h2>
+          <h3 className="text-3xl font-extrabold">1.154.315 Filmes</h3>
         </div>
       </main>
       <div className="absolute top-10 right-10">
@@ -33,7 +28,7 @@ export default function Home() {
         <a
           href="https://github.com/luan-cardoso"
           target="_blank"
-          className="text-emerald-600"
+          className="text-indigo-500"
         >
           Luan Cardoso
         </a>

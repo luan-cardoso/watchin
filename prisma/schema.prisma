@@ -1,0 +1,49 @@
+//docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // Hash da senha
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  favorites FavoriteMovie[]
+
+  @@map("users")
+}
+
+model Movie {
+  id          String   @id @default(cuid())
+  tmdbId      Int      @unique // ID do filme no TMDB (campo "id" da API)
+  title       String
+  releaseDate String   // release_date
+  posterPath  String?  // poster_path
+  genreIds    Int[]    // genre_ids (array de IDs de gêneros)
+  createdAt   DateTime @default(now())
+
+  favoritedBy FavoriteMovie[]
+
+  @@map("movies")
+}
+
+model FavoriteMovie {
+  id        String   @id @default(cuid())
+  userId    String
+  movieId   String
+  createdAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movie Movie @relation(fields: [movieId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, movieId]) // Um usuário não pode favoritar o mesmo filme duas vezes
+  @@map("favorite_movies")
+}

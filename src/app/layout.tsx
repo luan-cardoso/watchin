@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 import { Karla } from "next/font/google";
 import "./globals.css";
-import Nav from "./Nav";
+import { AuthProvider } from "./providers";
+import { Nav } from "@/features/navigation";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -26,7 +27,9 @@ export default function RootLayout({
         <nav>
           <Nav />
         </nav>
-        {children}
+        <div className="overflow-y-auto min-h-screen [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <AuthProvider>{children}</AuthProvider>
+        </div>
       </body>
     </html>
   );
