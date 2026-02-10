@@ -26,11 +26,11 @@ export default function Profile() {
   // Usuario logado
   if (session?.user) {
     return (
-      <div className="bg-[#202020] px-4 py-2 gap-6 items-center w-fit h-fit rounded-md flex justify-center shadow-2xl border border-[#ffffff50]">
-        <p className="text-indigo-500">@{session.user.name}</p>
+      <div className="px-4 py-2 gap-6 items-center w-fit h-fit rounded-md flex justify-center">
+        <p className="text-black md:block hidden">@{session.user.name}</p>
         <button
           onClick={handleLogout}
-          className="flex items-center h-10 gap-1 bg-[#615FFF] px-4 rounded hover:bg-[#4f4dcc] transition-colors"
+          className="flex items-center w-fit h-8 gap-1 bg-[#615FFF] px-4 rounded hover:bg-[#4f4dcc] transition-colors"
         >
           Sair
           <FontAwesomeIcon icon={faArrowRightFromBracket} />

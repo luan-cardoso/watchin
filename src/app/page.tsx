@@ -12,15 +12,13 @@ export default function Home() {
           src="/lightyear.jpg"
           alt="buzz lightyear image"
         />
-        <div className="relative px-20 pt-36">
-          <h2 className="text-5xl font-extrabold mb-6">
-            Salve seus filmes <br />
-            favoritos.
+        <div className="relative px-6 pt-28">
+          <h2 className="text-7xl font-extrabold leading-16">
+            Salve<br /> seus<br /> filmes<br />favoritos.
           </h2>
-          <h3 className="text-3xl font-extrabold">1.154.315 Filmes</h3>
         </div>
       </main>
-      <div className="absolute top-10 right-10">
+      <div className="absolute top-5 right-5">
         <Profile />
       </div>
       <div className="absolute bottom-2 right-10 text-xs">

@@ -12,27 +12,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SearchModal } from "@/features/movies";
 
-export default function Nav() {
+export default function NavMobile() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <>
-      <nav className="h-full flex flex-col items-center pt-12 px-4 gap-2 bg-[#202020]">
-        <h1 className="font-extrabold text-2xl pb-6">
-          WATCHIN<span className="text-indigo-500">'</span>
-        </h1>
+      <nav className="flex flex-row items-center py-2 pl-2">
         <NavItem icon={faHouse} href="/">
-          Home
         </NavItem>
         <NavItem icon={faBookmark} href="/favorites">
-          Favoritos
         </NavItem>
         <NavItem icon={faStar} href="/popular">
-          Populares
         </NavItem>
         <button
           onClick={() => setIsSearchOpen(true)}
-          className="group flex items-center gap-2 px-2 py-1 w-32 hover:text-indigo-500 transition-colors duration-200"
+          className="group flex items-center gap-2 px-2 py-1 hover:text-indigo-500 transition-colors duration-200"
         >
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
@@ -52,11 +46,9 @@ export default function Nav() {
 function NavItem({
   icon,
   href,
-  children,
 }: {
   icon: any;
   href: string;
-  children: React.ReactNode;
 }) {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -64,7 +56,7 @@ function NavItem({
   return (
     <Link
       href={href}
-      className={`group flex items-center gap-2 px-2 py-1 w-32 hover:text-indigo-500 transition-colors duration-200 ${
+      className={`group flex items-center gap-2 px-2 py-1 hover:text-indigo-500 transition-colors duration-200 ${
         isActive ? "text-indigo-500" : ""
       }`}
     >
@@ -74,7 +66,6 @@ function NavItem({
           isActive ? "text-indigo-500" : ""
         }`}
       />
-      <span className="font-light tracking-wider">{children}</span>
     </Link>
   );
 }

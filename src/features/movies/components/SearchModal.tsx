@@ -103,7 +103,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               <p className="text-center py-8 ">Nenhum filme encontrado</p>
             ) : (
               <div className="flex justify-center">
-                <div className="grid grid-cols-3 gap-10">
+                <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1">
                   {results.map((movie) => (
                     <MovieCard
                       key={movie.id}

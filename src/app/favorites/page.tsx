@@ -49,8 +49,8 @@ export default function FavoritosPage() {
   }
 
   return (
-    <div className="container mx-auto p-16">
-      <h1 className="text-3xl font-bold mb-6">Meus Favoritos</h1>
+    <div className="container p-10 md:p-20">
+      <h1 className="text-3xl font-bold mb-0 md:mb-2">Meus Favoritos</h1>
       <p className="mb-4">
         Bem-vindo, <span className="font-semibold">{session.user.name}</span>
       </p>
@@ -69,7 +69,7 @@ export default function FavoritosPage() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-6 items-center w-fit mx-auto py-10">
+        <div className="grid gap-10 items-center justify-center py-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {favorites.map((movie) => (
             <MovieCard
               key={movie.favoriteId ?? movie.id}

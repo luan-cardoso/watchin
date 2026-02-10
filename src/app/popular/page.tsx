@@ -24,7 +24,7 @@ export default function Popular({}) {
   }
 
   return (
-    <main className="grid grid-cols-4 gap-6 items-center w-fit mx-auto py-20">
+    <main className="grid gap-10 items-center justify-center w-[300px] mx-auto p-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:w-fit">
       {movies.map((movie) => (
         <MovieCard
           key={movie.id}

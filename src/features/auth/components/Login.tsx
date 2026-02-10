@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useLogin } from "@/shared/hooks/useLogin";
+import { useLogin } from "../hooks/useLogin";
 import { useSearchParams } from "next/navigation";
 
 const loginSchema = z.object({
