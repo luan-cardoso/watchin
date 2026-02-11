@@ -12,12 +12,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
+  turbopack: {
+    resolveAlias: {
       'generated': './generated',
-    };
-    return config;
+    },
   },
 };
 
