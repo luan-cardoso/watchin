@@ -9,23 +9,28 @@ export default function Home() {
           fill
           priority
           className="object-cover"
-          src="/lightyear.jpg"
+          src="/cine.jpg"
           alt="buzz lightyear image"
         />
-        <div className="relative px-6 pt-28">
-          <h2 className="text-7xl font-extrabold leading-16">
+        <div className="font-extrabold relative px-6 flex flex-col justify-center w-fit h-full md:text-9xl md:leading-26 text-7xl">
+          <h3>
             Salve
-            <br /> seus
-            <br /> filmes
-            <br />
-            favoritos.
-          </h2>
+          </h3>
+          <h3>
+            Seus
+          </h3>
+          <h3>
+            Filmes
+          </h3>
+          <h3>
+            Favoritos
+          </h3>
         </div>
       </main>
       <div className="absolute top-5 right-5">
         <Profile />
       </div>
-      <div className="absolute bottom-2 right-10 text-xs">
+      <div className="absolute bottom-5 right-10 text-xs">
         developed and built by{" "}
         <a
           href="https://github.com/luan-cardoso"

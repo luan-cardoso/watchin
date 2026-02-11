@@ -26,8 +26,8 @@ export default function Profile() {
   // Usuario logado
   if (session?.user) {
     return (
-      <div className="px-4 py-2 gap-6 items-center w-fit h-fit rounded-md flex justify-center">
-        <p className="text-black md:block hidden">@{session.user.name}</p>
+      <div className="px-4 py-2 gap-6 items-center w-fit h-fit flex justify-center">
+        <p className="md:block hidden">@{session.user.name}</p>
         <button
           onClick={handleLogout}
           className="flex items-center w-fit h-8 gap-1 px-4  bg-indigo-300 text-indigo-500 border border-indigo-500 rounded"
