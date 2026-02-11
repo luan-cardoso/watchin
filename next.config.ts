@@ -12,6 +12,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'generated': './generated',
+    };
+    return config;
+  },
 };
 
 export default nextConfig;
