@@ -15,8 +15,11 @@ const signupSchema = z.object({
 
 type SignupFormData = z.infer<typeof signupSchema>;
 
+import { useState } from "react";
+
 export default function Signup() {
   const { signup, isLoading, error } = useSignup();
+  const [success, setSuccess] = useState(false);
 
   const {
     register,
@@ -29,7 +32,9 @@ export default function Signup() {
   const onSubmit = async (data: SignupFormData) => {
     try {
       await signup(data);
+      setSuccess(true);
     } catch (err) {
+      setSuccess(false);
       console.error("Erro no cadastro:", err);
     }
   };
@@ -44,6 +49,14 @@ export default function Signup() {
           <p className="mt-4 text-center">
             Crie uma conta de forma simples e rápida.
           </p>
+
+          {success && (
+            <div className="mt-4 p-3 bg-green-500/10 border border-green-500 rounded-md">
+              <p className="text-green-500 text-sm text-center">
+                Tudo certo! Agora, basta fazer login.
+              </p>
+            </div>
+          )}
 
           {error && (
             <div className="mt-4 p-3 bg-red-500/10 border border-red-500 rounded-md">

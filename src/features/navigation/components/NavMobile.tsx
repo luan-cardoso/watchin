@@ -18,12 +18,9 @@ export default function NavMobile() {
   return (
     <>
       <nav className="flex flex-row items-center py-2 pl-2">
-        <NavItem icon={faHouse} href="/">
-        </NavItem>
-        <NavItem icon={faBookmark} href="/favorites">
-        </NavItem>
-        <NavItem icon={faStar} href="/popular">
-        </NavItem>
+        <NavItem icon={faHouse} href="/"></NavItem>
+        <NavItem icon={faBookmark} href="/favorites"></NavItem>
+        <NavItem icon={faStar} href="/popular"></NavItem>
         <button
           onClick={() => setIsSearchOpen(true)}
           className="group flex items-center gap-2 px-2 py-1 hover:text-indigo-500 transition-colors duration-200"
@@ -43,13 +40,7 @@ export default function NavMobile() {
   );
 }
 
-function NavItem({
-  icon,
-  href,
-}: {
-  icon: any;
-  href: string;
-}) {
+function NavItem({ icon, href }: { icon: any; href: string }) {
   const pathname = usePathname();
   const isActive = pathname === href;
 

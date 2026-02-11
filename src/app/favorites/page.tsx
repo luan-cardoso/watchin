@@ -52,7 +52,10 @@ export default function FavoritosPage() {
     <div className="container p-10 md:p-20">
       <h1 className="text-3xl font-bold mb-0 md:mb-2">Meus Favoritos</h1>
       <p className="mb-4">
-        Bem-vindo, <span className="font-semibold">{session.user.name}</span>
+        Bem-vindo,{" "}
+        <span className="font-semibold text-indigo-500">
+          {session.user.name}
+        </span>
       </p>
       {isLoading && favorites.length === 0 ? (
         <div className="w-full flex justify-center py-10">
@@ -69,7 +72,7 @@ export default function FavoritosPage() {
           </p>
         </div>
       ) : (
-        <div className="grid gap-10 items-center justify-center py-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="w-fit justify-center grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {favorites.map((movie) => (
             <MovieCard
               key={movie.favoriteId ?? movie.id}

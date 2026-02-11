@@ -14,7 +14,11 @@ export default function Home() {
         />
         <div className="relative px-6 pt-28">
           <h2 className="text-7xl font-extrabold leading-16">
-            Salve<br /> seus<br /> filmes<br />favoritos.
+            Salve
+            <br /> seus
+            <br /> filmes
+            <br />
+            favoritos.
           </h2>
         </div>
       </main>

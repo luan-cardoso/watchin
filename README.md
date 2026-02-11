@@ -8,7 +8,7 @@ Aplicativo para salvar e organizar seus filmes favoritos.
 - **TailwindCSS** - Estilização
 - **OAuth + Passport.js** - Autenticação
 - **Zod** - Validação
-- **PostgreSQL** - Database
+- **Supabase PostgreSQL** - Database
 - **Prisma** - ORM
 - **TypeScript** - Tipagem estática
 - **FontAwesome** - Ícones

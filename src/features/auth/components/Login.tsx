@@ -19,7 +19,7 @@ type LoginFormData = z.infer<typeof loginSchema>;
 export default function Login() {
   const { login, isLoading, error } = useLogin();
   const searchParams = useSearchParams();
-  const signupSuccess = searchParams.get("signup") === "success";
+  const loginSuccess = searchParams.get("login") === "success";
 
   const {
     register,
@@ -47,14 +47,6 @@ export default function Login() {
           <p className="mt-4 text-center">
             Faça login para ter a melhor experiência do app.
           </p>
-
-          {signupSuccess && (
-            <div className="mt-4 p-3 bg-green-500/10 border border-green-500 rounded-md">
-              <p className="text-green-500 text-sm text-center">
-                Conta criada com sucesso! Faça login para continuar.
-              </p>
-            </div>
-          )}
 
           {error && (
             <div className="mt-4 p-3 bg-red-500/10 border border-red-500 rounded-md">

@@ -30,7 +30,7 @@ export default function Profile() {
         <p className="text-black md:block hidden">@{session.user.name}</p>
         <button
           onClick={handleLogout}
-          className="flex items-center w-fit h-8 gap-1 bg-[#615FFF] px-4 rounded hover:bg-[#4f4dcc] transition-colors"
+          className="flex items-center w-fit h-8 gap-1 px-4  bg-indigo-300 text-indigo-500 border border-indigo-500 rounded"
         >
           Sair
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
@@ -44,7 +44,7 @@ export default function Profile() {
     <>
       <button
         onClick={() => setIsLoginOpen(true)}
-        className="px-6 py-2 flex items-center gap-1 bg-[#615FFF] rounded hover:bg-[#4f4dcc] transition-colors"
+        className="flex items-center w-fit h-8 gap-1 px-4  bg-indigo-300 text-indigo-500 border border-indigo-500 rounded"
       >
         Entrar
       </button>
