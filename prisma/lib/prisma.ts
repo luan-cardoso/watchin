@@ -1,4 +1,5 @@
-import { PrismaClient } from "../../src/generated/prisma/client";
+import { PrismaClient } from "../../src/generated/prisma/client/index";
+// Alternativamente, pode-se usar o index.ts
 import { PrismaPg } from "@prisma/adapter-pg";
 import { parse } from "pg-connection-string";
 
