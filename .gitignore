@@ -13,12 +13,11 @@
 # testing
 /coverage
 
-# Prisma generated client
-/generated
-
 # next.js
 /.next/
 /out/
+
+src/generated/prisma/client
 
 # production
 /build
