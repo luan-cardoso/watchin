@@ -26,6 +26,6 @@ Este projeto utiliza uma **Feature-Based Architecture** (Arquitetura Baseada em 
 - ✅ Listas de favoritos
 - ✅ Navegação responsiva
 
-O aplicativo estará disponível em `http://localhost:3000`.
+O aplicativo estará disponível em `https://watchin.fun`.
 
 **Desenvolvido e construído com ❤️ por [Luan Cardoso](https://github.com/luan-cardoso)**
