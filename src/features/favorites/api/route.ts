@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/features/auth/lib/auth";
-import { prisma } from "../../../../prisma/lib/prisma";
+import { prisma } from "../../../lib/prisma";
 
 // GET - Listar favoritos do usuário
 export async function GET() {
